@@ -5,8 +5,8 @@ const PORT = 8089,
   PATH = '/root/node/expressdemo/toupiao'
 
 var deployServer = http.createServer(function(request, response) {
-  response.writeHead(404)
-  response.end(request.url)
+  // response.writeHead(404)
+  // response.end(request.url)
   if (request.url.search(/deploy\/?$/i) > 0) {
 
     var commands = [
