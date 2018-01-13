@@ -27,7 +27,7 @@ router.get('/', function(req, res, next) {
 			// console.log('[SELECT ERROR] - ', err.message);
 
 			res.json({
-				status: true,
+				status: false,
 				msg: err.message
 			})
 			return;
