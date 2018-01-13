@@ -14,7 +14,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 //SQL语句
-var sql = 'SELECT icon FROM lunbo1';
+var sql = 'SELECT icon FROM lunbo';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
