@@ -29,24 +29,26 @@ router.get('/', function(req, res, next) {
 		var arr = [];
 		if (err) {
 			console.log('[SELECT ERROR] - ', err.message);
+
+			res.json({
+				status: true,
+				msg: err.message
+			})
 			return;
 		}
-		// console.log(params.id);
 
-		//console.log(result);
 
 		result.forEach(function(v, k) {
-			console.log(k, v);
+
 			arr.push({
 				images: v.icon
 			})
 		})
 
 		//把搜索值输出
-		// res.send(result);
-
 		res.json({
 			status: true,
+			msg: "成功",
 			data: arr
 		});
 	});
