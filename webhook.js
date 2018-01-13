@@ -1,13 +1,14 @@
 var http = require('http'),
   exec = require('exec')
 
-const PORT = 8089,
-  PATH = '/root/node/expressdemo/toupiao'
-//todo delelte
+const PORT = 8089;
+
+//aa
 var deployServer = http.createServer(function(request, response) {
-  // response.writeHead(404)
-  // response.end(request.url)
-  if (request.url.search(/deploy\/?$/i) > 0) {
+
+  if (request.url.search(/toupiao\/?$/i) > 0) {
+
+    const PATH = '/root/node/expressdemo/toupiao';
 
     var commands = [
       'cd ' + PATH,
