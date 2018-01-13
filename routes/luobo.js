@@ -24,8 +24,6 @@ router.get('/', function(req, res, next) {
 
 		var arr = [];
 		if (err) {
-			// console.log('[SELECT ERROR] - ', err.message);
-
 			res.json({
 				status: false,
 				msg: err.message
@@ -48,6 +46,8 @@ router.get('/', function(req, res, next) {
 			data: arr
 		});
 	});
+
+	connection.end();
 
 });
 
