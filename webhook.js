@@ -1,7 +1,7 @@
 var http = require('http'),
   exec = require('exec')
 
-const PORT = 8889,
+const PORT = 8089,
   PATH = '/root/node/expressdemo/toupiao'
 
 var deployServer = http.createServer(function(request, response) {
