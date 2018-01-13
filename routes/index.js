@@ -14,21 +14,17 @@ var connection = mysql.createConnection({
 connection.connect();
 
 //SQL语句
-var sql = 'SELECT icon FROM lunbo';
+var sql = 'SELECT icon FROM lunbo1';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	// res.render('index', {
-	// 	title: 'Express'
-	// });
 
-	// console.log(connection);
 
 	connection.query(sql, function(err, result) {
 
 		var arr = [];
 		if (err) {
-			console.log('[SELECT ERROR] - ', err.message);
+			// console.log('[SELECT ERROR] - ', err.message);
 
 			res.json({
 				status: true,
