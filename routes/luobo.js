@@ -22,6 +22,8 @@ router.get('/', function(req, res, next) {
 
 	connection.query(sql, function(err, result) {
 
+		console.log(err);
+
 		var arr = [];
 		if (err) {
 			res.json({
@@ -47,7 +49,7 @@ router.get('/', function(req, res, next) {
 		});
 	});
 
-	connection.end();
+	// connection.end();
 
 });
 

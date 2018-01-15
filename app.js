@@ -11,6 +11,8 @@ var users = require('./routes/users');
 var luobo = require('./routes/luobo');
 var search = require('./routes/search');
 
+var toupiao = require('./routes/toupiao');
+
 
 var test = require('./routes/test');
 
@@ -36,6 +38,10 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/luobo', luobo);
 app.use('/search', search);
+app.use('/toupiao', toupiao);
+
+
+
 app.use('/test', test);
 
 
