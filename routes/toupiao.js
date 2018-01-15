@@ -110,7 +110,7 @@ router.get('/', function(req, res, next) {
 
 					res.json({
 						status: true,
-						msg: "成功123"
+						msg: "成功"
 					})
 
 				});
