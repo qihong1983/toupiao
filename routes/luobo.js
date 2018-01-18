@@ -7,7 +7,8 @@ var connection = mysql.createConnection({
 	host: '39.106.140.80',
 	user: 'root',
 	password: 'Qihong38752673',
-	database: 'toupiao'
+	database: 'toupiao',
+	useConnectionPooling: true
 });
 
 //执行创建连接 
