@@ -28,6 +28,7 @@ router.get('/', function(req, res, next) {
 		var arr = [];
 		if (err) {
 			res.json({
+				aa: "aaa",
 				status: false,
 				msg: err.message
 			})
