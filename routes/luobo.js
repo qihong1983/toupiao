@@ -28,7 +28,6 @@ router.get('/', function(req, res, next) {
 		var arr = [];
 		if (err) {
 			res.json({
-				aa: "aaa11",
 				status: false,
 				msg: err.message
 			})
@@ -45,7 +44,6 @@ router.get('/', function(req, res, next) {
 
 		//把搜索值输出
 		res.json({
-			aaa: "aaa11",
 			status: true,
 			msg: "成功",
 			data: arr
