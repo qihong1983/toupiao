@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
 	user: 'root',
 	password: 'Qihong38752673',
 	database: 'toupiao',
-	useConnectionPooling: true
+	useConnectionPooling: false
 });
 
 //执行创建连接 
@@ -20,7 +20,6 @@ var sql = 'SELECT icon FROM lunbo';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
 
 	connection.query(sql, function(err, result) {
 
