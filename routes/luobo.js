@@ -3,26 +3,33 @@ var router = express.Router();
 
 var mysql = require('mysql');
 
-var dbConfig = {
+// var dbConfig = {
+// 	host: '39.106.140.80',
+// 	port: 3306,
+// 	user: 'root',
+// 	password: 'Qihong38752673',
+// 	database: 'toupiao',
+// 	useConnectionPooling: true
+// }
+
+var connection = mysql.createConnection({
 	host: '39.106.140.80',
-	port: 3306,
 	user: 'root',
 	password: 'Qihong38752673',
 	database: 'toupiao',
 	useConnectionPooling: true
-}
+});
 
 //执行创建连接 
 connection.connect(function(err) {
 	if (err) {
-		var dbConfig = {
+		connection = mysql.createConnection({
 			host: '39.106.140.80',
-			port: 3306,
 			user: 'root',
 			password: 'Qihong38752673',
 			database: 'toupiao',
 			useConnectionPooling: true
-		}
+		});
 
 		connection.connect();
 	}
