@@ -3,17 +3,42 @@ var router = express.Router();
 
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
+var dbConfig = {
 	host: '39.106.140.80',
 	port: 3306,
 	user: 'root',
 	password: 'Qihong38752673',
 	database: 'toupiao',
 	useConnectionPooling: false
-});
+}
 
-//执行创建连接 
-connection.connect();
+function handleDisconnect() {
+	var connection = mysql.createConnection(dbConfig);
+
+	//执行创建连接 
+	connection.connect(function(error) {
+		if (err) {
+			// We introduce a delay before attempting to reconnect,
+			// to avoid a hot loop, and to allow our node script to
+			// process asynchronous requests in the meantime.
+			console.log('error when connecting to db:', err);
+			setTimeout(handleDisconnect, 1000);
+		}
+	});
+
+	connection.on('error', function(err) {
+		console.log('db error', err);
+		if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+			handleDisconnect();
+		} else {
+			throw err;
+		}
+	});
+}
+
+handleDisconnect();
+
+
 
 //SQL语句
 var sql = 'SELECT icon FROM lunbo';
