@@ -9,34 +9,24 @@ var dbConfig = {
 	user: 'root',
 	password: 'Qihong38752673',
 	database: 'toupiao',
-	useConnectionPooling: false
+	useConnectionPooling: true
 }
 
-function handleDisconnect() {
-	var connection = mysql.createConnection(dbConfig);
-
-	//执行创建连接 
-	connection.connect(function(err) {
-		if (err) {
-			// We introduce a delay before attempting to reconnect,
-			// to avoid a hot loop, and to allow our node script to
-			// process asynchronous requests in the meantime.
-			console.log('error when connecting to db:', err);
-			setTimeout(handleDisconnect, 1000);
+//执行创建连接 
+connection.connect(function(err) {
+	if (err) {
+		var dbConfig = {
+			host: '39.106.140.80',
+			port: 3306,
+			user: 'root',
+			password: 'Qihong38752673',
+			database: 'toupiao',
+			useConnectionPooling: true
 		}
-	});
 
-	connection.on('error', function(err) {
-		console.log('db error', err);
-		if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-			handleDisconnect();
-		} else {
-			throw err;
-		}
-	});
-}
-
-handleDisconnect();
+		connection.connect();
+	}
+});
 
 
 
