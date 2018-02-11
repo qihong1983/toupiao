@@ -16,7 +16,7 @@ function handleDisconnect() {
 	var connection = mysql.createConnection(dbConfig);
 
 	//执行创建连接 
-	connection.connect(function(error) {
+	connection.connect(function(err) {
 		if (err) {
 			// We introduce a delay before attempting to reconnect,
 			// to avoid a hot loop, and to allow our node script to
