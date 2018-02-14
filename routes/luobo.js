@@ -21,19 +21,19 @@ var connection = mysql.createConnection({
 });
 
 //执行创建连接 
-connection.connect(function(err) {
-	if (err) {
-		connection = mysql.createConnection({
-			host: '39.106.140.80',
-			user: 'root',
-			password: 'Qihong38752673',
-			database: 'toupiao',
-			useConnectionPooling: true
-		});
+// connection.connect(function(err) {
+// 	if (err) {
+// 		connection = mysql.createConnection({
+// 			host: '39.106.140.80',
+// 			user: 'root',
+// 			password: 'Qihong38752673',
+// 			database: 'toupiao',
+// 			useConnectionPooling: true
+// 		});
 
-		connection.connect();
-	}
-});
+// 		connection.connect();
+// 	}
+// });
 
 
 
@@ -42,6 +42,16 @@ var sql = 'SELECT icon FROM lunbo';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
+	var connection = mysql.createConnection({
+		host: '39.106.140.80',
+		user: 'root',
+		password: 'Qihong38752673',
+		database: 'toupiao',
+		useConnectionPooling: true
+	});
+
+	connection.connect();
 
 	connection.query(sql, function(err, result) {
 
