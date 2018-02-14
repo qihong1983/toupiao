@@ -13,13 +13,13 @@ var connection = mysql.createConnection({
 //执行创建连接 
 connection.connect();
 
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
 	// console.log(req.query);
 
 	var currentPage = 1;
+
 	if (req.query.currentPage == undefined) {
 		currentPage = 1;
 	} else {
@@ -45,10 +45,7 @@ router.get('/', function(req, res, next) {
 
 		});
 
-
 	}
-
-
 
 	// connection.query(sql, function(err, result) {
 
