@@ -13,6 +13,7 @@ var search = require('./routes/search');
 
 var toupiao = require('./routes/toupiao');
 
+var mySend = require('./routes/mySend');
 
 var test = require('./routes/test');
 
@@ -39,7 +40,7 @@ app.use('/users', users);
 app.use('/luobo', luobo);
 app.use('/search', search);
 app.use('/toupiao', toupiao);
-
+app.use('/mySend', mySend);
 
 
 app.use('/test', test);
