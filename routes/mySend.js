@@ -30,12 +30,48 @@ router.get('/', function(req, res, next) {
 
 
 	//SQL语句
-	var sql = 'SELECT icon FROM lunbo';
+	var sql = 'SELECT `sendAuthorId`, `id`,`title` FROM `sendTable` WHERE sendAuthorId = "' + req.query.sendAuthorId + '"';
 
-	res.json({
-		status: true,
-		msg: req.query.sendAuthorId
+
+	connection.query(sql, function(err, result) {
+
+
+		if (err) {
+			res.json({
+				status: false,
+				msg: err
+			})
+		} else {
+
+			var arr = [];
+
+
+			result.forEach(function(v, k) {
+				arr.push({
+					send_id: v.id,
+					title: v.title
+				})
+			})
+
+
+			res.json({
+				status: true,
+				msg: arr
+			})
+		}
+
+
+
+		// send_id: 'xxx',
+		// 	title: '十一去哪玩'
+
+
 	});
+
+	// res.json({
+	// 	status: true,
+	// 	msg: req.query.sendAuthorId
+	// });
 
 
 });
