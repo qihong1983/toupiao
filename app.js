@@ -15,6 +15,16 @@ var toupiao = require('./routes/toupiao');
 
 var mySend = require('./routes/mySend');
 
+var myAbout = require('./routes/myAbout');
+
+
+var detail = require('./routes/detail');
+
+var option = require('./routes/option');
+
+var member = require('./routes/member');
+var start = require('./routes/start');
+
 var test = require('./routes/test');
 
 var app = express();
@@ -42,7 +52,18 @@ app.use('/search', search);
 app.use('/toupiao', toupiao);
 app.use('/mySend', mySend);
 
+app.use('/myAbout', myAbout);
 
+
+app.use('/detail', detail);
+
+
+app.use('/option', option);
+
+
+app.use('/member', member);
+
+app.use('/start', start);
 app.use('/test', test);
 
 

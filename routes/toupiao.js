@@ -16,51 +16,6 @@ connection.connect();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-	// {
-	// 	title: "xxxx",
-	// 	desc: "xxxxxx",
-	// 	option: [{
-	// 		thumbTitle: "xxxx",
-	// 		thumbImg: "xxxx"
-	// 	}],
-	// 	isStartTime: true,
-	// 	startTime: "2017-12-30 15: 30",
-	// 	endTime: "2017-12-30 23:30",
-	// 	isPass: true,
-	// 	password: "xxxx"
-	// 	sendAuthorId: 'xx',
-	// 	sendAuthor: '小洪'
-	// 	sendAuthorIcon: 'xxx.png'
-	// }
-
-
-
-	// res.query = {
-	// 	title: "xxxx",
-	// 	desc: "xxxxxx",
-	// 	option: [{
-	// 		thumbTitle: "xxxx",
-	// 		thumbImg: "xxxx"
-	// 	}],
-	// 	isStartTime: true,
-	// 	startTime: "2017-12-30 15: 30",
-	// 	endTime: "2017-12-30 23:30",
-	// 	isPass: true,
-	// 	password: "xxxx"
-	// 	sendAuthorId: 'xx',
-	// 	sendAuthor: '小洪'
-	// 	sendAuthorIcon: 'xxx.png'
-	// };
-
-
-	// var currentPage = 1;
-	// if (req.query.currentPage == undefined) {
-	// 	currentPage = 1;
-	// } else {
-	// 	currentPage = req.query.currentPage;
-	// }
-
-	// console.log(req.query.title);
 
 
 	//SQL语句

@@ -55,7 +55,7 @@ router.get('/', function(req, res, next) {
 		//把搜索值输出
 		res.json({
 			status: true,
-			msg: "成功",
+			msg: "1成功",
 			data: arr
 		});
 	});
